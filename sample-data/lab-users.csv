@@ -1,0 +1,8 @@
+EmployeeId,GivenName,Surname,SamAccountName,Department,Title,ManagerId,StartDate,EndDate,Status
+NSR-1001,Daniel,Reyes,dreyes,Store Operations,Store Operations Manager,,2024-02-12,,Active
+NSR-1003,Liam,Garcia,lgarcia,Store Operations,Store Operations Analyst,NSR-1001,2025-01-20,,Active
+NSR-1007,Maya,Santos,msantos,Store Operations,Store Operations Analyst,NSR-1001,2026-09-07,,PreHire
+NSR-1010,Sofia,Ramos,sramos,Finance,Finance Controller,,2023-06-05,,Active
+NSR-1012,Ethan,Cruz,ecruz,Finance,Finance Reporting Analyst,NSR-1010,2025-08-18,,Active
+NSR-0991,Noah,Lim,nlim,Technology,Application Support Analyst,,2022-11-14,2026-08-28,Terminated
+

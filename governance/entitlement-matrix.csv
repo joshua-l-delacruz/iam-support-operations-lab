@@ -1,0 +1,10 @@
+Role,Entitlement,Resource,Risk,Approval,Review_Frequency,SoD_Conflict
+All-Employees,M365-Baseline,Microsoft 365,Low,Automatic birthright,Annual,None
+Store-Operations,Store-Ops-Portal,Store Operations Portal,Medium,Manager,Quarterly,Finance-Payment-Approver
+Store-Operations,Store-Reporting,Store Operations Portal,Medium,Manager and App Owner,Quarterly,None
+Finance-Operations,Finance-Reporting,Finance Reporting,High,Manager and App Owner,Quarterly,None
+Finance-Operations,Vendor-Maintenance,Vendor Portal,High,Finance Controller,Quarterly,Finance-Payment-Approver
+Finance-Approver,Finance-Payment-Approver,Vendor Portal,Critical,Controller and Security,Monthly,Vendor-Maintenance
+IAM-Support,Directory-Helpdesk-Operator,Active Directory,High,IAM Manager,Quarterly,Privileged-Role-Administrator
+IAM-Privileged,Privileged-Role-Administrator,Microsoft Entra ID,Critical,Security and PIM,Monthly,Directory-Helpdesk-Operator
+
