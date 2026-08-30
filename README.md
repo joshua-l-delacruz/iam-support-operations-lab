@@ -6,6 +6,8 @@
 **Target roles:** IAM Support Analyst, Identity Operations Analyst, Access Management Analyst, IT Systems Support  
 **Core platforms represented:** Active Directory, Microsoft Entra ID, SailPoint concepts, ServiceNow-style incident management
 
+![IAM support operations simulator](https://raw.githubusercontent.com/joshua-l-delacruz/lab-docs/main/assets/images/iam-support-operations-simulator.png)
+
 ## Executive summary
 
 This lab models the IAM support operations of a fictional retail organization called **Northstar Retail Group**. It demonstrates how an IAM support analyst receives requests, verifies identity information, follows approval controls, troubleshoots access failures, documents evidence, escalates safely, and confirms remediation.
@@ -197,4 +199,12 @@ This repository is a learning and portfolio environment. It is not a production 
 - Portfolio: https://joshuadelacruz.solutions/
 - LinkedIn: https://www.linkedin.com/in/joshua-l-dela-cruz/
 - GitHub: https://github.com/joshua-l-delacruz
+
+## Contributing
+
+Corrections and improvements to the fictional lab material are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Never submit employer data, production screenshots, credentials, tenant identifiers, or real identity records.
+
+## License
+
+No open-source license has been selected yet. Copyright remains with the repository owner unless a license is added.
 

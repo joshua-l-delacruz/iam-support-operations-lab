@@ -1,0 +1,26 @@
+name: Documentation correction
+description: Suggest a correction using only fictional and sanitized examples.
+title: "[Docs]: "
+labels: [documentation]
+body:
+  - type: markdown
+    attributes:
+      value: Never submit employer data, real tickets, credentials, tenant identifiers, or production screenshots.
+  - type: input
+    id: location
+    attributes:
+      label: Document and section
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Operational or governance rationale
+    validations:
+      required: true
