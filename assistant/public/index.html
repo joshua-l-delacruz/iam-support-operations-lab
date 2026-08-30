@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Northstar IAM Support Assistant</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <span class="badge">ADVISORY-ONLY TRAINING ASSISTANT</span>
+    <h1>Northstar IAM Support Assistant</h1>
+    <p>Describe a fictional or sanitized IAM issue. The assistant classifies the case, asks qualification questions, and recommends evidence-driven next steps. It cannot change accounts or approve access.</p>
+    <form id="form">
+      <label for="question">Sanitized support issue</label>
+      <textarea id="question" maxlength="4000" required placeholder="Example: An approved SailPoint entitlement shows completed, but the user still cannot access the finance application."></textarea>
+      <button>Analyze issue</button>
+      <p class="notice">Never enter passwords, tokens, authentication codes, real employee records, or production identifiers.</p>
+    </form>
+    <section id="result" class="result" aria-live="polite"></section>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
+

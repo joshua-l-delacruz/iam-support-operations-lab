@@ -1,0 +1,28 @@
+name: IAM Assistant Tests
+
+on:
+  pull_request:
+    paths:
+      - "assistant/**"
+      - ".github/workflows/assistant-tests.yml"
+  push:
+    branches: [main]
+    paths:
+      - "assistant/**"
+      - ".github/workflows/assistant-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: assistant
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
