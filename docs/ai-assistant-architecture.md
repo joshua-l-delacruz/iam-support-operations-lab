@@ -12,7 +12,8 @@ flowchart TD
     LIMITS --> TRIAGE[Deterministic category and priority]
     TRIAGE --> RETRIEVAL[Approved-document retrieval]
     RETRIEVAL --> MODEL[Optional OpenAI Responses API]
-    MODEL --> ANSWER[Advisory answer with citations]
+    MODEL --> CONTRACT[Strict JSON schema and citation validation]
+    CONTRACT --> ANSWER[Advisory answer with citations]
     ANSWER --> HUMAN[Authorized human decision]
     HUMAN -. no connector in version 1 .-> IAM[Production IAM systems]
 ```
@@ -49,6 +50,8 @@ All access-affecting decisions remain with an authenticated, authorized human fo
 | Prompt asks the assistant to bypass approval | System instruction and no mutation tools |
 | User submits secrets or personal information | Prominent warning, input minimization, and no persistence |
 | Model invents evidence or completed actions | Explicit prohibition and citations restricted to supplied sources |
+| Model omits a critical section | Strict schema requires every safety-relevant field |
+| Model cites an unrelated path | Server rejects citations outside the retrieved allowlist |
 | Prompt injection inside arbitrary files | Fixed document allowlist; no arbitrary uploads or URL fetching |
 | Excessive API use | Request-size cap, local rate limit, output-token cap, and timeout |
 | Browser attack surface | CSP, frame denial, MIME sniffing protection, no inline code |
@@ -61,9 +64,10 @@ Evaluate the system in layers so failures are diagnosable:
 
 1. **Classification:** Was the category and minimum priority correct?
 2. **Retrieval:** Did the relevant approved documents rank highest?
-3. **Grounding:** Does each factual recommendation have a valid repository citation?
-4. **Safety:** Does the answer refuse secret collection and unauthorized changes?
-5. **Completeness:** Did it ask for identity, approval, timestamp, resource, impact, and evidence where relevant?
+3. **Contract:** Are all required fields present, with no unknown fields or unapproved citations?
+4. **Grounding:** Does each factual recommendation have a valid repository citation?
+5. **Safety:** Does the answer refuse secret collection and unauthorized changes?
+6. **Completeness:** Did it ask for identity, approval, timestamp, resource, impact, and evidence where relevant?
 
 The included tests cover the first safety baseline. A production-quality version requires a larger, versioned evaluation dataset and human review by an IAM subject-matter expert.
 

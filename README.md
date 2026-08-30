@@ -105,7 +105,7 @@ These documents demonstrate operational concepts and troubleshooting logic. They
 
 ### 5. IAM support AI assistant
 
-The [Northstar IAM Support Assistant](assistant/README.md) is a secure, advisory-only teaching application built on the repository's sanitized runbooks and support cases. It demonstrates deterministic priority classification, approved-source retrieval, guarded model instructions, human-approval boundaries, and automated safety evaluations.
+The [Northstar IAM Support Assistant](assistant/README.md) is a secure, advisory-only teaching application built on the repository's sanitized runbooks and support cases. It demonstrates deterministic priority classification, approved-source retrieval, strict structured model outputs, human-approval boundaries, and automated safety evaluations.
 
 The first version works without an API key in deterministic demo mode. When a local OpenAI API key is configured, it uses the Responses API with `store: false` to generate grounded guidance. It has no production IAM connectors and cannot grant, revoke, approve, disable, or otherwise modify access.
 

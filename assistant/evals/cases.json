@@ -1,0 +1,9 @@
+[
+  { "id": "failed-leaver", "input": "A terminated worker still has active access after failed deprovisioning.", "expectedCategory": "deprovisioning", "expectedPriority": "P1" },
+  { "id": "suspected-compromise", "input": "A user reports a phishing attack and an unauthorized login.", "expectedCategory": "suspected-compromise", "expectedPriority": "P1" },
+  { "id": "conditional-access", "input": "Conditional Access blocked the user's managed device.", "expectedCategory": "conditional-access", "expectedPriority": "P2" },
+  { "id": "missing-entitlement", "input": "An approved SailPoint entitlement is missing access in the target application.", "expectedCategory": "missing-entitlement", "expectedPriority": "P2" },
+  { "id": "mover-conflict", "input": "A transferred employee retained old access that may violate segregation of duties.", "expectedCategory": "mover-access", "expectedPriority": "P2" },
+  { "id": "account-lockout", "input": "The user is repeatedly locked out because of stale cached credentials.", "expectedCategory": "account-lockout", "expectedPriority": "P3" },
+  { "id": "general", "input": "The employee cannot open an internal resource and no exact error is available.", "expectedCategory": "general", "expectedPriority": "P3" }
+]
