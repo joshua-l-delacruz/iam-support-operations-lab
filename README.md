@@ -218,7 +218,8 @@ This repository is a learning and portfolio environment. It is not a production 
 
 Corrections and improvements to the fictional lab material are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Never submit employer data, production screenshots, credentials, tenant identifiers, or real identity records.
 
+Potential security or sensitive-data issues must be reported privately according to [SECURITY.md](SECURITY.md).
+
 ## License
 
 No open-source license has been selected yet. Copyright remains with the repository owner unless a license is added.
-
