@@ -2,6 +2,12 @@ const form = document.querySelector("#form");
 const result = document.querySelector("#result");
 const session = crypto.randomUUID();
 
+const list = values => values.length ? values.map(value => `• ${value}`).join("\n") : "• None established";
+
+function formatGuidance(guidance) {
+  return `Assessment\n${guidance.assessment}\n\nKnown facts\n${list(guidance.knownFacts)}\n\nAssumptions\n${list(guidance.assumptions)}\n\nEvidence to collect\n${list(guidance.evidenceToCollect)}\n\nSafe next steps\n${list(guidance.safeNextSteps)}\n\nEscalation\n${guidance.escalation}\n\nAI-cited sources\n${list(guidance.sourceCitations)}`;
+}
+
 form.addEventListener("submit", async event => {
   event.preventDefault();
   result.className = "result show";
@@ -16,7 +22,8 @@ form.addEventListener("submit", async event => {
     if (!response.ok) throw new Error(data.error);
     const questions = data.triage.questions.map((question, index) => `${index + 1}. ${question}`).join("\n");
     const sources = data.sources.map(source => `• ${source}`).join("\n");
-    result.textContent = `Priority: ${data.triage.priority}\nCategory: ${data.triage.category}\n\nQualification questions\n${questions}\n\n${data.guidance || "Demo mode: deterministic triage is active. Add OPENAI_API_KEY locally to enable grounded AI guidance."}\n\nMatched sources\n${sources}`;
+    const guidance = data.guidance ? formatGuidance(data.guidance) : "Demo mode: deterministic triage is active. Add OPENAI_API_KEY locally to enable grounded AI guidance.";
+    result.textContent = `Priority: ${data.triage.priority}\nCategory: ${data.triage.category}\n\nQualification questions\n${questions}\n\n${guidance}\n\nMatched sources\n${sources}`;
   } catch (error) {
     result.textContent = error.message;
   }

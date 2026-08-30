@@ -11,7 +11,7 @@ For every issue:
 6. Cite only the supplied repository sources using [path/to/file.md].
 7. State when the supplied sources do not establish an answer.
 
-Return concise Markdown under these headings: Assessment, Questions, Safe next steps, Escalation, Sources.`;
+Return only the requested structured response. Every source citation must exactly match one of the supplied repository paths.`;
 
 export function buildInput(question, triage, sources) {
   const context = sources.map(item => `SOURCE: ${item.source}\n${item.excerpt}`).join("\n\n---\n\n");
