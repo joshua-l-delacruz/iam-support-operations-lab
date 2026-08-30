@@ -103,6 +103,14 @@ The governance section includes:
 
 These documents demonstrate operational concepts and troubleshooting logic. They do not claim SailPoint connector engineering or production workflow development.
 
+### 5. IAM support AI assistant
+
+The [Northstar IAM Support Assistant](assistant/README.md) is a secure, advisory-only teaching application built on the repository's sanitized runbooks and support cases. It demonstrates deterministic priority classification, approved-source retrieval, guarded model instructions, human-approval boundaries, and automated safety evaluations.
+
+The first version works without an API key in deterministic demo mode. When a local OpenAI API key is configured, it uses the Responses API with `store: false` to generate grounded guidance. It has no production IAM connectors and cannot grant, revoke, approve, disable, or otherwise modify access.
+
+See the [AI assistant architecture and threat model](docs/ai-assistant-architecture.md).
+
 ## Support methodology
 
 Every IAM issue follows the same disciplined sequence:
@@ -141,6 +149,7 @@ iam-support-operations-lab/
 ├── README.md
 ├── docs/
 │   ├── architecture.md
+│   ├── ai-assistant-architecture.md
 │   ├── operating-model.md
 │   └── interview-walkthrough.md
 ├── lifecycle/
@@ -164,6 +173,11 @@ iam-support-operations-lab/
 │   └── certification-campaign.md
 ├── sample-data/
 │   └── lab-users.csv
+├── assistant/
+│   ├── public/
+│   ├── src/
+│   ├── test/
+│   └── README.md
 └── scripts/
     ├── New-LabUsers.ps1
     └── Disable-LabLeaver.ps1

@@ -1,0 +1,4 @@
+assistant/.env
+assistant/node_modules/
+assistant/coverage/
+
